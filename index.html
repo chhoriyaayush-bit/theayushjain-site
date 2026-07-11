@@ -8,12 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,500;1,9..144,700&family=Rozha+One&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0E1E42;
-    --paper:#EFF4FB;
-    --gold:#E8A33D;
-    --wine:#2B5FDE;
-    --ember:#3FC1E9;
-    --ink-soft:#16295C;
+    --ink:#0D0D12;
+    --paper:#F8F6F0;
+    --gold:#C6A15B;
+    --wine:#6E1E2C;
+    --ember:#8C9A93;
+    --ink-soft:#1A1A22;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -35,9 +35,9 @@
     display:flex;justify-content:space-between;align-items:center;
     padding:1.1rem 5vw;
     z-index:100;
-    background:rgba(14,30,66,0.85);
+    background:rgba(13,13,18,0.85);
     backdrop-filter:blur(6px);
-    border-bottom:1px solid rgba(232,163,61,0.2);
+    border-bottom:1px solid rgba(198,161,91,0.2);
   }
   .brand{
     font-family:'Fraunces',serif;
@@ -61,9 +61,9 @@
       background:var(--ink);
       max-height:0;overflow:hidden;
       transition:max-height 0.3s ease;
-      border-bottom:1px solid rgba(232,163,61,0.2);
+      border-bottom:1px solid rgba(198,161,91,0.2);
     }
-    .nav-links a{padding:1rem 5vw;width:100%;border-top:1px solid rgba(232,163,61,0.1);}
+    .nav-links a{padding:1rem 5vw;width:100%;border-top:1px solid rgba(198,161,91,0.1);}
     #navToggle:checked ~ .nav-links{max-height:300px;}
     .burger{display:block;}
   }
@@ -80,7 +80,7 @@
     position:absolute;
     font-family:'Rozha One',serif;
     font-size:min(48vw,42rem);
-    color:rgba(232,163,61,0.07);
+    color:rgba(198,161,91,0.07);
     top:50%;left:50%;
     transform:translate(-50%,-50%) rotate(-6deg);
     white-space:nowrap;
@@ -110,7 +110,7 @@
     margin-top:1.4rem;
     font-size:clamp(1rem,1.6vw,1.25rem);
     max-width:38ch;
-    color:rgba(239,244,251,0.75);
+    color:rgba(248,246,240,0.75);
     line-height:1.6;
   }
   .hero-tags{
@@ -118,7 +118,7 @@
     display:flex;gap:0.7rem;margin-top:2rem;flex-wrap:wrap;
   }
   .tag{
-    border:1px solid rgba(232,163,61,0.4);
+    border:1px solid rgba(198,161,91,0.4);
     color:var(--gold);
     font-size:0.78rem;
     letter-spacing:0.08em;
@@ -129,7 +129,7 @@
   .scroll-hint{
     position:absolute;bottom:2.2rem;left:6vw;
     font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;
-    color:rgba(239,244,251,0.4);
+    color:rgba(248,246,240,0.4);
     z-index:1;
   }
 
@@ -171,27 +171,27 @@
 
   /* dark sections */
   .dark{background:var(--ink);color:var(--paper);}
-  .dark .section-word{color:rgba(232,163,61,0.06);}
+  .dark .section-word{color:rgba(198,161,91,0.06);}
   .dark .section-eyebrow{color:var(--ember);}
-  .dark .section-note{color:rgba(239,244,251,0.68);}
+  .dark .section-note{color:rgba(248,246,240,0.68);}
 
   /* paper sections */
   .paper{background:var(--paper);color:var(--ink);}
-  .paper .section-word{color:rgba(43,95,222,0.06);}
+  .paper .section-word{color:rgba(110,30,44,0.06);}
   .paper .section-eyebrow{color:var(--wine);}
-  .paper .section-note{color:rgba(14,30,66,0.65);}
+  .paper .section-note{color:rgba(13,13,18,0.65);}
 
   /* ---------- SONGS ---------- */
   .cards{position:relative;z-index:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem;}
   .song-card{
-    background:rgba(14,30,66,0.9);
-    border:1px solid rgba(43,95,222,0.15);
+    background:rgba(13,13,18,0.9);
+    border:1px solid rgba(110,30,44,0.15);
     border-radius:6px;
     padding:1.8rem;
     display:flex;flex-direction:column;gap:1rem;
     transition:transform 0.25s ease, box-shadow 0.25s ease;
   }
-  .song-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(43,95,222,0.18);}
+  .song-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(110,30,44,0.18);}
   .song-title{
     font-family:'Fraunces',serif;font-style:italic;font-weight:600;
     font-size:1.5rem;color:var(--paper);
@@ -209,19 +209,19 @@
     flex-shrink:0;
     opacity:0.5;
   }
-  .play-status{font-size:0.85rem;color:rgba(239,244,251,0.55);line-height:1.4;}
+  .play-status{font-size:0.85rem;color:rgba(248,246,240,0.55);line-height:1.4;}
   .song-card.empty{
     border-style:dashed;
     align-items:center;justify-content:center;text-align:center;
-    color:rgba(239,244,251,0.5);
+    color:rgba(248,246,240,0.5);
     font-size:0.95rem;
   }
 
   /* ---------- FEATURED SONG CARD ---------- */
   .song-card.featured{
     grid-column:1/-1;
-    border-color:rgba(232,163,61,0.35);
-    background:linear-gradient(145deg, rgba(14,30,66,0.95), rgba(43,95,222,0.25));
+    border-color:rgba(198,161,91,0.35);
+    background:linear-gradient(145deg, rgba(13,13,18,0.95), rgba(110,30,44,0.25));
     padding:2.2rem;
   }
   .song-card.featured .song-title{font-size:1.9rem;}
@@ -239,13 +239,13 @@
   .lyrics-body{
     margin-top:1rem;
     padding-top:1rem;
-    border-top:1px solid rgba(232,163,61,0.15);
+    border-top:1px solid rgba(198,161,91,0.15);
   }
   .lyrics-line{
     display:flex;gap:1rem;
     padding:0.35rem 0;
     font-size:0.95rem;
-    color:rgba(239,244,251,0.75);
+    color:rgba(248,246,240,0.75);
     line-height:1.5;
   }
   .lyrics-time{
@@ -256,14 +256,14 @@
     opacity:0.7;
   }
   .lyrics-pending{
-    color:rgba(239,244,251,0.55);
+    color:rgba(248,246,240,0.55);
     font-size:0.9rem;
     line-height:1.6;
     font-style:italic;
   }
   .lyrics-section-label{
     color:var(--wine);
-    background:rgba(43,95,222,0.12);
+    background:rgba(110,30,44,0.12);
     display:inline-block;
     font-size:0.7rem;
     letter-spacing:0.08em;
@@ -276,14 +276,14 @@
   /* ---------- COMING SOON GRID ---------- */
   .soon-card{
     background:rgba(255,255,255,0.55);
-    border:1px solid rgba(43,95,222,0.15);
+    border:1px solid rgba(110,30,44,0.15);
     border-radius:6px;
     padding:1.8rem;
     position:relative;z-index:1;
     max-width:640px;
   }
   .paper .soon-card{background:rgba(255,255,255,0.5);}
-  .dark .soon-card{background:rgba(255,255,255,0.04);border-color:rgba(232,163,61,0.2);}
+  .dark .soon-card{background:rgba(255,255,255,0.04);border-color:rgba(198,161,91,0.2);}
   .soon-title{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:1.3rem;margin-bottom:0.5rem;}
   .soon-body{font-size:0.95rem;line-height:1.6;opacity:0.8;}
 
@@ -295,10 +295,77 @@
   .book-cover{
     width:240px;
     border-radius:6px;
-    box-shadow:0 20px 40px rgba(14,30,66,0.35);
+    box-shadow:0 20px 40px rgba(13,13,18,0.35);
     flex-shrink:0;
   }
   .book-layout .soon-card{flex:1;min-width:260px;}
+
+  /* ---------- KIND WORDS ---------- */
+  .testimonial-grid{
+    position:relative;z-index:1;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.4rem;margin-bottom:2.5rem;
+  }
+  .testimonial-card{
+    background:rgba(255,255,255,0.5);
+    border:1px solid rgba(198,161,91,0.2);
+    border-radius:8px;
+    padding:1.4rem;
+  }
+  .testimonial-photo{
+    width:44px;height:44px;border-radius:50%;
+    object-fit:cover;margin-bottom:0.8rem;
+  }
+  .testimonial-message{
+    font-size:0.92rem;line-height:1.6;
+    color:rgba(13,13,18,0.75);
+    margin-bottom:0.8rem;
+    font-style:italic;
+  }
+  .testimonial-name{
+    font-size:0.82rem;font-weight:700;color:var(--wine);
+  }
+  .kind-words-form{
+    position:relative;z-index:1;
+    max-width:520px;
+    display:flex;flex-direction:column;gap:1rem;
+  }
+  .form-row input[type="text"],
+  .form-row textarea{
+    width:100%;
+    background:rgba(255,255,255,0.6);
+    border:1px solid rgba(198,161,91,0.3);
+    border-radius:6px;
+    padding:0.8rem 1rem;
+    font-family:'Karla',sans-serif;
+    font-size:0.95rem;
+    color:var(--ink);
+    resize:vertical;
+  }
+  .form-row input[type="text"]::placeholder,
+  .form-row textarea::placeholder{color:rgba(13,13,18,0.4);}
+  .file-label{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    font-size:0.88rem;color:rgba(13,13,18,0.7);
+    cursor:pointer;
+  }
+  .file-label input[type="file"]{
+    font-size:0.82rem;
+  }
+  .submit-btn{
+    align-self:flex-start;
+    background:var(--wine);
+    color:var(--paper);
+    border:none;
+    padding:0.85rem 1.8rem;
+    border-radius:100px;
+    font-size:0.9rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:background 0.2s, transform 0.2s;
+  }
+  .submit-btn:hover{background:var(--gold);transform:translateY(-2px);}
 
   /* ---------- BOOK BLURB & BUY LINKS ---------- */
   .book-info{flex:1;min-width:260px;}
@@ -314,7 +381,7 @@
   .book-blurb{
     font-size:0.98rem;
     line-height:1.65;
-    color:rgba(22,16,14,0.75);
+    color:rgba(13,13,18,0.75);
     margin-bottom:1.4rem;
     max-width:52ch;
   }
@@ -322,7 +389,7 @@
 
   /* ---------- AUTHOR BIO ---------- */
   .author-bio{
-    background:rgba(214,51,108,0.05);
+    background:rgba(110,30,44,0.05);
     border-left:3px solid var(--wine);
     border-radius:4px;
     padding:1.3rem 1.5rem;
@@ -339,7 +406,7 @@
   .author-bio-text{
     font-size:0.93rem;
     line-height:1.7;
-    color:rgba(22,16,14,0.75);
+    color:rgba(13,13,18,0.75);
     margin-bottom:1rem;
   }
   .author-bio-quote{
@@ -361,7 +428,7 @@
   }
   .buy-btn:hover{background:var(--gold);transform:translateY(-2px);}
   .promo-badge{
-    background:rgba(214,51,108,0.08);
+    background:rgba(110,30,44,0.08);
     border:1px dashed var(--wine);
     border-radius:8px;
     padding:1rem 1.2rem;
@@ -376,7 +443,7 @@
   }
   .promo-body{
     font-size:0.85rem;
-    color:rgba(22,16,14,0.7);
+    color:rgba(13,13,18,0.7);
     line-height:1.5;
   }
 
@@ -384,7 +451,7 @@
   .blog-card{
     position:relative;z-index:1;
     background:rgba(255,255,255,0.04);
-    border:1px solid rgba(232,163,61,0.18);
+    border:1px solid rgba(198,161,91,0.18);
     border-radius:6px;
     padding:2rem;
     max-width:680px;
@@ -399,7 +466,7 @@
   }
   .blog-intro{
     font-size:0.95rem;
-    color:rgba(234,242,251,0.7);
+    color:rgba(248,246,240,0.7);
     margin-bottom:1rem;
   }
   .blog-toggle summary{
@@ -415,12 +482,12 @@
   .blog-body{
     margin-top:1.2rem;
     padding-top:1.2rem;
-    border-top:1px solid rgba(232,163,61,0.15);
+    border-top:1px solid rgba(198,161,91,0.15);
   }
   .blog-body p{
     font-size:0.95rem;
     line-height:1.75;
-    color:rgba(234,242,251,0.85);
+    color:rgba(248,246,240,0.85);
     margin-bottom:1.1rem;
   }
   .blog-lang-label{
@@ -433,7 +500,7 @@
   }
   .blog-tags{
     font-size:0.8rem;
-    color:rgba(234,242,251,0.5);
+    color:rgba(248,246,240,0.5);
     margin-top:1.5rem;
   }
 
@@ -442,7 +509,7 @@
   .book-cover-small{
     width:100px;
     border-radius:6px;
-    box-shadow:0 14px 28px rgba(14,30,66,0.25);
+    box-shadow:0 14px 28px rgba(13,13,18,0.25);
     align-self:flex-start;
     margin-top:2.2rem;
   }
@@ -462,14 +529,20 @@
   footer{
     padding:2.5rem 6vw;
     background:var(--ink);
-    color:rgba(239,244,251,0.4);
+    color:rgba(248,246,240,0.4);
     font-size:0.8rem;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
-    border-top:1px solid rgba(232,163,61,0.12);
+    border-top:1px solid rgba(198,161,91,0.12);
   }
 </style>
 </head>
 <body>
+
+<form name="kind-words" data-netlify="true" enctype="multipart/form-data" hidden>
+  <input type="text" name="name">
+  <textarea name="message"></textarea>
+  <input type="file" name="photo">
+</form>
 
 <nav>
   <div class="brand">theayushjain.com</div>
@@ -804,7 +877,43 @@
   </div>
 </section>
 
-<section id="contact" class="paper">
+<section id="kind-words" class="paper">
+  <div class="section-word" style="top:-10%;left:-8%;" aria-hidden="true">WORDS</div>
+  <div class="section-header">
+    <span class="section-eyebrow">KIND WORDS</span>
+    <h2 class="section-title">What people are saying</h2>
+    <p class="section-note">Feedback and love from readers, listeners, and collaborators. Leave yours below — every message gets read.</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="soon-card">
+      <div class="soon-title">Be the first!</div>
+      <div class="soon-body">No kind words yet — yours could be the first one featured here.</div>
+    </div>
+  </div>
+
+  <form name="kind-words" method="POST" data-netlify="true" enctype="multipart/form-data" class="kind-words-form">
+    <input type="hidden" name="form-name" value="kind-words">
+    <p style="display:none;">
+      <label>Don't fill this out: <input name="bot-field"></label>
+    </p>
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Your name" required>
+    </div>
+    <div class="form-row">
+      <textarea name="message" placeholder="Share your thoughts..." rows="4" required></textarea>
+    </div>
+    <div class="form-row">
+      <label class="file-label">
+        📷 Add a photo (optional)
+        <input type="file" name="photo" accept="image/*">
+      </label>
+    </div>
+    <button type="submit" class="submit-btn">Send Kind Words</button>
+  </form>
+</section>
+
+<section id="contact" class="dark">
   <div class="section-word" style="bottom:-10%;right:-10%;" aria-hidden="true">PITCH</div>
   <div class="contact-inner">
     <span class="section-eyebrow">WORK WITH ME</span>
