@@ -300,6 +300,143 @@
   }
   .book-layout .soon-card{flex:1;min-width:260px;}
 
+  /* ---------- BOOK BLURB & BUY LINKS ---------- */
+  .book-info{flex:1;min-width:260px;}
+  .book-couplet{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15rem;
+    line-height:1.8;
+    color:var(--wine);
+    margin-bottom:1.3rem;
+  }
+  .book-blurb{
+    font-size:0.98rem;
+    line-height:1.65;
+    color:rgba(22,16,14,0.75);
+    margin-bottom:1.4rem;
+    max-width:52ch;
+  }
+  .buy-links{display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+
+  /* ---------- AUTHOR BIO ---------- */
+  .author-bio{
+    background:rgba(214,51,108,0.05);
+    border-left:3px solid var(--wine);
+    border-radius:4px;
+    padding:1.3rem 1.5rem;
+    margin-bottom:1.6rem;
+    max-width:56ch;
+  }
+  .author-bio-label{
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--wine);
+    margin-bottom:0.7rem;
+  }
+  .author-bio-text{
+    font-size:0.93rem;
+    line-height:1.7;
+    color:rgba(22,16,14,0.75);
+    margin-bottom:1rem;
+  }
+  .author-bio-quote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .buy-btn{
+    background:var(--wine);
+    color:var(--paper);
+    padding:0.65rem 1.3rem;
+    border-radius:100px;
+    font-size:0.85rem;
+    letter-spacing:0.03em;
+    transition:background 0.2s, transform 0.2s;
+  }
+  .buy-btn:hover{background:var(--gold);transform:translateY(-2px);}
+  .promo-badge{
+    background:rgba(214,51,108,0.08);
+    border:1px dashed var(--wine);
+    border-radius:8px;
+    padding:1rem 1.2rem;
+    max-width:52ch;
+  }
+  .promo-title{
+    display:block;
+    font-weight:700;
+    color:var(--wine);
+    font-size:0.95rem;
+    margin-bottom:0.3rem;
+  }
+  .promo-body{
+    font-size:0.85rem;
+    color:rgba(22,16,14,0.7);
+    line-height:1.5;
+  }
+
+  /* ---------- BLOG ---------- */
+  .blog-card{
+    position:relative;z-index:1;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(232,163,61,0.18);
+    border-radius:6px;
+    padding:2rem;
+    max-width:680px;
+  }
+  .blog-date{
+    font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:0.5rem;
+  }
+  .blog-title{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+    font-size:1.7rem;margin-bottom:0.6rem;
+  }
+  .blog-intro{
+    font-size:0.95rem;
+    color:rgba(234,242,251,0.7);
+    margin-bottom:1rem;
+  }
+  .blog-toggle summary{
+    cursor:pointer;
+    color:var(--ember);
+    font-size:0.85rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    list-style:none;
+  }
+  .blog-toggle summary::-webkit-details-marker{display:none;}
+  .blog-toggle summary::before{content:"→ ";}
+  .blog-body{
+    margin-top:1.2rem;
+    padding-top:1.2rem;
+    border-top:1px solid rgba(232,163,61,0.15);
+  }
+  .blog-body p{
+    font-size:0.95rem;
+    line-height:1.75;
+    color:rgba(234,242,251,0.85);
+    margin-bottom:1.1rem;
+  }
+  .blog-lang-label{
+    color:var(--gold);
+    font-size:0.75rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-top:1.5rem;
+    margin-bottom:0.8rem !important;
+  }
+  .blog-tags{
+    font-size:0.8rem;
+    color:rgba(234,242,251,0.5);
+    margin-top:1.5rem;
+  }
+
   /* ---------- BOOK COVERS SIDE BY SIDE ---------- */
   .book-covers{display:flex;gap:1rem;flex-shrink:0;}
   .book-cover-small{
@@ -422,10 +559,7 @@
     <div class="song-card">
       <div class="song-title">Ishq Agar</div>
       <div class="song-mood">Romantic</div>
-      <div class="play-row">
-        <div class="play-btn">▶</div>
-        <div class="play-status">Preview clip uploading soon — check back shortly.</div>
-      </div>
+      <iframe style="border-radius:10px;margin-top:0.4rem;" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//on.soundcloud.com/98pMFH1jhpXNzEFk8H&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
     </div>
   </div>
 </section>
@@ -453,9 +587,25 @@
       <img src="images/zindagi-ek-ghazal-front.jpeg" alt="Zindagi Ek Ghazal book cover" class="book-cover">
       <img src="images/zindagi-ek-ghazal-back.jpeg" alt="Zindagi Ek Ghazal back cover art" class="book-cover-small">
     </div>
-    <div class="soon-card">
-      <div class="soon-title">Blurb coming soon</div>
-      <div class="soon-body">Send the description, genre, and where readers can buy or read it — I'll drop it in right here alongside the cover.</div>
+    <div class="book-info">
+      <p class="book-blurb">This book contains poems that express love, pain, life, heartbreak, friendship, and many emotions — a dictionary of words, but also a dictionary of a poet's mind: a glimpse of how he sees life, how he feels the pain.</p>
+      <p class="book-blurb"><em>Zindagi Ek Ghazal</em> is a musical odyssey through the human heart, divided into five acts — the heights of Love (Mohabbat), the quiet depths of Solitude (Akelapan), the foundation of Friendship (Dosti), the tension of Waiting (Intezaar), and finally, a celestial sanctuary in Love in the Stars. A song of a soul that finds rhythm in every tear and joy in every shared smile.</p>
+
+      <div class="author-bio">
+        <div class="author-bio-label">About the Author</div>
+        <p class="author-bio-text">Ayush Chhoriya is a contemporary poet capturing the raw, timeless symphony of the human heart. In his debut collection, <em>Zindagi Ek Ghazal</em>, he blends the lyrical beauty of classic expression with modern verse — exploring love, solitude, friendship, and waiting, before arriving at a boundless sanctuary among the stars. His work is a shared journey toward finding destiny and connection, in human bonds and beyond.</p>
+        <p class="author-bio-quote">"The true measure of love is not the joy of finding, but the lonely wisdom gathered while navigating the dark, until you realize the city of stars was built from the patience of your own waiting heart."</p>
+      </div>
+
+      <div class="buy-links">
+        <a href="https://amzn.in/d/0B0mrgm" class="buy-btn" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a href="https://dl.flipkart.com/s/JEnh3NuuuN" class="buy-btn" target="_blank" rel="noopener">Buy on Flipkart</a>
+        <a href="https://notionpress.com/in/read/zindagi-ek-ghazal" class="buy-btn" target="_blank" rel="noopener">Notion Press Store</a>
+      </div>
+      <div class="promo-badge">
+        <span class="promo-title">💥 Limited time — first 50 buyers</span>
+        <span class="promo-body">Code <strong>ABISHQ</strong> · 15% off paperback (Notion Press) · 25% off hardcover for the first 10 buyers</span>
+      </div>
     </div>
   </div>
 </section>
@@ -466,9 +616,191 @@
     <span class="section-eyebrow">BLOG</span>
     <h2 class="section-title">Notes and reflections</h2>
   </div>
-  <div class="soon-card">
-    <div class="soon-title">Coming soon</div>
-    <div class="soon-body">Blog posts will appear here once you share the titles and text.</div>
+  <div class="blog-card">
+    <div class="blog-date">November 3, 2025</div>
+    <h3 class="blog-title">The Resolve Of 52 Years!!</h3>
+    <p class="blog-intro">On India's Women's Cricket World Cup win — a 52-year wait, finally answered.</p>
+    <details class="blog-toggle">
+      <summary>Read full post</summary>
+      <div class="blog-body">
+        <p class="blog-lang-label">In English</p>
+        <p>The <strong>story</strong> was <strong>rooted</strong> to the <strong>earth</strong>, the <strong>dream</strong> to <strong>touch</strong> the sky. ✨<br>
+        In every <strong>breath</strong> was the fire of <strong>passion</strong>, every <strong>sorrow</strong> <strong>accounted</strong> for, nearby..... 💯<br>
+        This <strong>five-decade</strong> long journey, a play of <strong>light</strong> and <strong>shade</strong>,<br>
+        Where every wall of <strong>society</strong> had to be broken, a <strong>fusion</strong> of spirit made...💪</p>
+
+        <p>The past's <strong>defeat</strong> they turned not to <strong>grief</strong>, but to <strong>strength</strong> and <strong>might</strong>. 🔥<br>
+        No <strong>tears</strong> in their <strong>eyes</strong>, but a dream to shine so <strong>bright</strong>.....💖<br>
+        The <strong>echo</strong> was of every <strong>lane</strong>, every <strong>field</strong>, from domestic <strong>grounds</strong> did rise,<br>
+        This was the resolve of <strong>Woman</strong> <strong>Power</strong>, witnessed now by all the world's eyes..... 🌍</p>
+
+        <p>Each <strong>morning's</strong> rays brought more than just the day's start, 🌅<br>
+        It was years of <strong>penance</strong> they quietly <strong>played</strong> a part.....🧘‍♀️<br>
+        But the <strong>heart's</strong> <strong>beat</strong> finally lent its <strong>voice</strong> to the silent call,<br>
+        <strong>Bondage</strong> broke, new <strong>Passion</strong> touched the Sky of all!! 🚀</p>
+
+        <p>This <strong>victory</strong> is not just a <strong>sight</strong> for the eyes, it's a union of the soul. 🫂<br>
+        It is the <strong>final</strong> <strong>bridge</strong> for every <strong>deferred</strong> goal.....<br>
+        Now in <strong>Every</strong> <strong>Home</strong> rises with pride, the <strong>daughters</strong> of <strong>Bharat's</strong> name,<br>
+        They <strong>changed</strong> the game, changed the time, <strong>fulfilling</strong> a glorious <strong>aim</strong>.....👏</p>
+
+        <p>That <strong>Cup</strong> which for <strong>52</strong> <strong>years</strong> stood <strong>afar</strong> and alone, ⏳<br>
+        These <strong>Women</strong> brought <strong>Victory</strong> home, their <strong>passion</strong> fiercely <strong>shown</strong>. 🥳<br>
+        Their <strong>hard</strong> <strong>work</strong>, their <strong>dedication</strong> became immortal,<br>
+        <strong>History</strong> filled new pages with the colour of <strong>gold</strong>, so <strong>eternal</strong>. 🥇✨</p>
+
+        <p class="blog-lang-label">In Hindi</p>
+        <p><strong>Zameen</strong> se judi <strong>kahani</strong> thi, asmaan chhoone ka <strong>khwaab</strong>. ✨<br>
+        Har <strong>saans</strong> mein tha <strong>vishwas</strong> ka junoon, har <strong>ghum</strong> ka tha hisaab.....💯<br>
+        Yeh <strong>paanch</strong> <strong>dashak</strong> ka safar, dhoop aur <strong>chhaon</strong> ka khel,<br>
+        Jahan <strong>samaj</strong> ki har <strong>deewar</strong> ko todna tha, tha <strong>jazbon</strong> ka mel..... 💪</p>
+
+        <p>Kal ki <strong>haar</strong> ko unhone <strong>shikwa</strong> nahi, <strong>shakti</strong> banaya. 🔥<br>
+        Apni <strong>aankhon</strong> mein aansu nahi, apna <strong>sapna</strong> sajaya.... 💖<br>
+        Har gali, har <strong>maidan</strong> ki goonj thi, gharelu <strong>chhatron</strong> se uthi,<br>
+        <strong>Nari</strong> <strong>shakti</strong> ka <strong>sankalp</strong> tha yeh, jo <strong>duniya</strong> ne ab dekhi.... 🌍</p>
+
+        <p>Har <strong>subah</strong> ki <strong>kirnen</strong> sirf din nahi <strong>laati</strong> thi, 🌅<br>
+        Woh saalon ki <strong>tapasya</strong> thi jo <strong>khamoshi</strong> se <strong>nibhaati</strong> thi....🧘‍♀️<br>
+        Lekin dil ki <strong>dhadkan</strong> ne <strong>Awaaz</strong> ko de di <strong>zubaan</strong>,<br>
+        <strong>Bandish</strong> tooti, naya <strong>Junoon</strong> chhua <strong>Aasmaan</strong>!!🚀</p>
+
+        <p>Yeh <strong>vijay</strong> sirf <strong>ankhon</strong> ka manzar nahi, yeh <strong>rooh</strong> ka <strong>milan</strong> hai. 🫂<br>
+        Peeche <strong>chhoote</strong> har sapne ka <strong>antim</strong> pul hai....<br>
+        Ab Har <strong>Ghar</strong> mein <strong>garv</strong> se utha, <strong>bharat</strong> ki betiyon ka <strong>naam</strong>,<br>
+        Khel <strong>badal</strong> diya, <strong>samay</strong> badal diya, kiya <strong>shaandar</strong> <strong>kaam</strong>....👏</p>
+
+        <p>Woh <strong>Cup</strong> jo <strong>52</strong> <strong>saal</strong> se <strong>door</strong> tha khada, ⏳<br>
+        <strong>Jeet</strong> laayi ye <strong>Mahilayein</strong>, <strong>junoon</strong> tha bada.... 🥳<br>
+        Inki <strong>mehnat</strong>, inka <strong>samarpan</strong> amar ho gaya,<br>
+        <strong>Itihaas</strong> mein naye <strong>panno</strong> par <strong>sone</strong> se <strong>bhar</strong> gaya....🥇✨</p>
+
+        <p class="blog-tags">#ZindagiEkGhazal · #HindiPoetry · #DeepQuotes</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="blog-card" style="margin-top:1.5rem;">
+    <div class="blog-date">January 7, 2026</div>
+    <h3 class="blog-title">Manzil ka Junoon 🔥</h3>
+    <p class="blog-intro">On restlessness, ambition, and refusing to slow down until the goal is reached.</p>
+    <details class="blog-toggle">
+      <summary>Read full post</summary>
+      <div class="blog-body">
+        <p class="blog-lang-label">In English</p>
+        <p>The clamor of my thoughts—how can sleep now reside? 🌙<br>
+        Not on my eyelids, but on the goal, my sight is tied....✨<br>
+        The path that I've chosen is surely not easy or mild, ⛰️<br>
+        But the fire to truly live has made every road reconciled....🔥</p>
+
+        <p>The dreams waiting there for me send out their potent cue,<br>
+        They bring courage's message every hour a new.....💪<br>
+        There are great and mighty things that I have to do, 🏆<br>
+        Before which every closed door bends and breaks through....🚪</p>
+
+        <p>To pause, to tire? That's simply not in my lexicon, 🙅‍♂️<br>
+        On my heart's book, it's just a story of moving on.....📖<br>
+        Every victory will become my identity in this dawn, 🥇<br>
+        And every moment will whisper, "Yes, this life is truly your own."...👑</p>
+
+        <p>I am separate from the crowd—that is my philosophy, 🚶<br>
+        I am drawing the luminous line for what my life will be....💡<br>
+        The walls of fear must be smashed for the victory, 🔨<br>
+        I give every hardship a new resolve and tenacity.....🦁</p>
+
+        <p>Even in my silence, there is a warrior's shout, 📢<br>
+        Every tomorrow must better what today is about....📈<br>
+        Even the waves of the ocean will cease and die out, 🌊🚫<br>
+        Because now I intend to make the sky itself bow down....🌌⬇️</p>
+
+        <p class="blog-lang-label">In Hindi</p>
+        <p>Shor hai <strong>khayalon</strong> ka—ab neend ka <strong>silsila</strong> kaisa? 🌙<br>
+        Palkon pe nahi, <strong>manzil</strong> pe nazar <strong>tiki</strong> hai ✨....<br>
+        Jo <strong>rahguzar</strong> chuni hai, woh <strong>aasaan</strong> nahi, ⛰️<br>
+        Magar us <strong>jeene</strong> ki <strong>aag</strong> se har raah <strong>chamki</strong> hai....🔥</p>
+
+        <p><strong>Sapne</strong> jo mere liye <strong>raasta</strong> dekh rahe hain,<br>
+        Woh har <strong>ghadi</strong> himmat ka <strong>paigaam</strong> dete hain....💪<br>
+        Mujhe <strong>karni</strong> hai woh har ek aisi <strong>badi</strong> <strong>baat</strong>, 🏆<br>
+        Jiske aage har band <strong>darwaze</strong> <strong>jhukte</strong> hain....🚪</p>
+
+        <p>Thamna, <strong>thakna</strong>? Ye to ab <strong>lafzon</strong> mein nahi, 🙅‍♂️<br>
+        Dil ki <strong>kitaab</strong> pe bas aage <strong>badhne</strong> ki <strong>kahani</strong> hai.....📖<br>
+        Har jeet <strong>meri</strong> <strong>pehchaan</strong> banegi is jahaan mein, 🥇<br>
+        Aur har <strong>lamha</strong> kahega, "Haan, ye teri hi <strong>zindagani</strong> hai."....👑</p>
+
+        <p><strong>Bheed</strong> se alag hoon, ye mera <strong>falsafa</strong> hai, 🚶<br>
+        Main <strong>roshni</strong> ki <strong>lakeer</strong> khud <strong>kheench</strong> raha hoon.....💡<br>
+        <strong>Dar</strong> ki <strong>deewaron</strong> ko tod kar aage <strong>badhna</strong> hai, 🔨<br>
+        Main har <strong>mushkil</strong> ko naya <strong>hausla</strong> de raha hoon....🦁</p>
+
+        <p>Meri <strong>khaamoshi</strong> mein bhi <strong>lalkaar</strong> ki <strong>awaaz</strong> hai, 📢<br>
+        Har kal mere <strong>aaj</strong> se <strong>behtar</strong> <strong>banana</strong> hai.....📈<br>
+        Ye <strong>samandar</strong> ki <strong>lehrein</strong> bhi ruk <strong>jaayengi</strong>, 🌊🚫<br>
+        <strong>Kyunki</strong> ab to <strong>aasmaan</strong> ko hi <strong>jhukana</strong> hai.....🌌⬇️</p>
+
+        <p class="blog-tags">#ManzilKaJunoon · #HindiPoetry · #PoemOfTheDay</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="blog-card" style="margin-top:1.5rem;">
+    <div class="blog-date">April 9, 2026</div>
+    <h3 class="blog-title">Her!! ✨👀</h3>
+    <p class="blog-intro">A tribute — her eyes, her voice, her quiet strength, in two languages.</p>
+    <details class="blog-toggle">
+      <summary>Read full post</summary>
+      <div class="blog-body">
+        <p class="blog-lang-label">In Hindi</p>
+        <p>Uski Aankh, woh gehra samandar hai mere liye, 🌊<br>
+        Jahaan Ishq ka pehla sachh aakar thehre..... 🤍<br>
+        Uske Hoth, woh subah ki kirnain hain, hansti hui, ☀️<br>
+        Jismein pyaar ka pakeezah ehsaas lehre..... ✨</p>
+
+        <p>Uski Surat, chaandni jaisi saaf aur haseen lage, 🌕<br>
+        Yaad-e-wafa ka diya bankar jalta hai.....🕯️<br>
+        Uske Baal, ghani ghatayein hain, sukoon ki chhaon de, 🌳<br>
+        Jahaan har thaka hua musafir aakar palta hai..... 😌</p>
+
+        <p>Uski Awaaz, jharne ki dhun hai, jo rooh ko shifa de, 💧<br>
+        Har guzre hue lamhe ko dobara woh jeeti hai..... 🎶<br>
+        Uske Jhumke, hawa se hilte patton ki goonj hain, 🍃<br>
+        Jo aane waale kal ki khabar chura kar peeti hai..... 🔮</p>
+
+        <p>Uski Nazakat, phool ki tehni jaisi narm hai magar khaas, 🌸<br>
+        Woh sabr hai jo toofan mein bhi harr roz nazar aaye..... 🧘<br>
+        Uska Andaaz, bahaar ki khushbu jaisa aam nahi, 🌷<br>
+        Woh manzil hai, jise har ek dil paane ko taras jaaye..... 🎯</p>
+
+        <p class="blog-lang-label">In English</p>
+        <p>Her eyes, they are a deep ocean for me, 🌊<br>
+        Where the first truth of love comes to reside..... 🤍<br>
+        Her lips, they are the morning's bright sunbeam, smilingly, ☀️<br>
+        In which the pure sense of passion does glide..... ✨</p>
+
+        <p>Her face, like moonlight, seems spotless and fine, 🌕<br>
+        A lamp of true loyalty that steadily burns..... 🕯️<br>
+        Her hair, they are thick clouds, offering shade divine, 🌳<br>
+        Where every tired soul finds shelter and turns..... 😌</p>
+
+        <p>Her voice, a waterfall's melody, healing the heart, 💧<br>
+        Every moment that passed, she brings back to life..... 🎶<br>
+        Her earrings, the sound of leaves fluttering apart, 🍃<br>
+        Stealing news of tomorrow, away from the strife..... 🔮</p>
+
+        <p>Her softness, like a flower stem, gentle yet rare, 🌸<br>
+        That patience is seen even when fierce tempests rise..... 🧘<br>
+        Her manner, not common like spring fragrance in the air, 🌷<br>
+        She is the destination every heart longs to surprise..... 🎯</p>
+
+        <p class="blog-tags">#Her · #LovePoetry · #RoohaniIshq</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="soon-card" style="margin-top:1.5rem;">
+    <div class="soon-title">More posts coming soon</div>
+    <div class="soon-body">Send over the next blog link or text whenever you're ready.</div>
   </div>
 </section>
 
