@@ -213,6 +213,12 @@
     transition:background 0.2s, color 0.2s, transform 0.2s;
   }
   .shuffle-btn:hover{background:var(--wine);color:var(--paper);transform:translateY(-2px);}
+  .shuffle-status{
+    margin-top:0.7rem;
+    font-size:0.82rem;
+    color:rgba(13,13,18,0.5);
+  }
+  .dark .shuffle-status{color:rgba(248,246,240,0.55);}
   .song-card.shuffle-highlight{
     animation:shufflePulse 1.1s ease;
   }
@@ -604,7 +610,8 @@
     <span class="section-eyebrow">SONGS</span>
     <h2 class="section-title">What I've written to be sung</h2>
     <p class="section-note">Snippets only — full tracks are shared directly with labels, artists, and producers who reach out. See the "Pitch Me" section below for how that works.</p>
-    <button type="button" id="shuffleSongsBtn" class="shuffle-btn">🔀 Shuffle a song</button>
+    <button type="button" id="shuffleSongsBtn" class="shuffle-btn">🔀 Shuffle songs</button>
+    <p class="shuffle-status" id="shuffleStatus"></p>
   </div>
   <div class="cards">
     <div class="song-card featured">
@@ -681,6 +688,24 @@
       <div class="song-title">Roohani</div>
       <div class="song-mood">Soulful</div>
       <iframe style="border-radius:10px;margin-top:0.4rem;" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ayush-jain-30356483/roohani&color=%23c6a15b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+    </div>
+    <div class="song-card shufflable">
+      <img src="images/aankhon-ka-tara-cover.png" alt="Aankhon Ka Tara cover art" class="song-cover">
+      <div class="song-title">Aankhon Ka Tara</div>
+      <div class="song-mood">Family · Heartfelt</div>
+      <iframe style="border-radius:10px;margin-top:0.4rem;" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ayush-jain-30356483/aankhon-ka-tara&color=%23c6a15b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+    </div>
+    <div class="song-card shufflable">
+      <img src="images/parinde-cover.png" alt="Parinde cover art" class="song-cover">
+      <div class="song-title">Parinde</div>
+      <div class="song-mood">Reflective</div>
+      <iframe style="border-radius:10px;margin-top:0.4rem;" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ayush-jain-30356483/parinde&color=%23c6a15b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+    </div>
+    <div class="song-card shufflable">
+      <img src="images/pyaar-ki-dastaan-cover.png" alt="Pyaar Ki Dastaan cover art" class="song-cover">
+      <div class="song-title">Pyaar Ki Dastaan</div>
+      <div class="song-mood">Romantic</div>
+      <iframe style="border-radius:10px;margin-top:0.4rem;" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ayush-jain-30356483/pyaar-ki-dastaan&color=%23c6a15b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
     </div>
   </div>
 </section>
@@ -979,24 +1004,58 @@
 <script>
   (function(){
     var btn = document.getElementById('shuffleSongsBtn');
+    var status = document.getElementById('shuffleStatus');
     if(!btn) return;
     var cards = Array.prototype.slice.call(document.querySelectorAll('.song-card.shufflable'));
-    var lastIndex = -1;
-    btn.addEventListener('click', function(){
+    var VISIBLE_COUNT = 4;
+    var lastCombo = '';
+
+    function shuffleArray(arr){
+      var a = arr.slice();
+      for(var i = a.length - 1; i > 0; i--){
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+      }
+      return a;
+    }
+
+    function showCombo(){
       if(cards.length === 0) return;
-      var idx = Math.floor(Math.random() * cards.length);
-      if(cards.length > 1){
-        while(idx === lastIndex){
-          idx = Math.floor(Math.random() * cards.length);
+      var shuffled = shuffleArray(cards);
+      var chosen = shuffled.slice(0, Math.min(VISIBLE_COUNT, cards.length));
+      var combo = chosen.map(function(c){ return c.dataset.songId || c.querySelector('.song-title').textContent; }).sort().join('|');
+
+      if(cards.length > VISIBLE_COUNT){
+        var attempts = 0;
+        while(combo === lastCombo && attempts < 8){
+          shuffled = shuffleArray(cards);
+          chosen = shuffled.slice(0, Math.min(VISIBLE_COUNT, cards.length));
+          combo = chosen.map(function(c){ return c.dataset.songId || c.querySelector('.song-title').textContent; }).sort().join('|');
+          attempts++;
         }
       }
-      lastIndex = idx;
-      cards.forEach(function(c){ c.classList.remove('shuffle-highlight'); });
-      var chosen = cards[idx];
-      void chosen.offsetWidth;
-      chosen.classList.add('shuffle-highlight');
-      chosen.scrollIntoView({behavior:'smooth', block:'center'});
-    });
+      lastCombo = combo;
+
+      cards.forEach(function(c){ c.style.display = 'none'; c.classList.remove('shuffle-highlight'); });
+      chosen.forEach(function(c){
+        c.style.display = '';
+        void c.offsetWidth;
+        c.classList.add('shuffle-highlight');
+      });
+
+      if(status){
+        if(cards.length > VISIBLE_COUNT){
+          status.textContent = 'Showing ' + chosen.length + ' of ' + cards.length + ' songs — shuffle for more';
+        } else {
+          status.textContent = '';
+        }
+      }
+    }
+
+    btn.addEventListener('click', showCombo);
+    showCombo();
+  })();
+</script>
   })();
 </script>
 </body>
